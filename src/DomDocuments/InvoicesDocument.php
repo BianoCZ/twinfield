@@ -48,7 +48,7 @@ class InvoicesDocument extends BaseDocument
         $customer = $invoice->getCustomer();
 
         // <customer>
-        $customerNode    = $this->createTextNode($customer->getCode());
+        $customerNode    = $this->createTextNode((string) $customer->getCode());
         $customerElement = $this->createElement('customer');
         $customerElement->appendChild($customerNode);
         $headerElement->appendChild($customerElement);
@@ -122,7 +122,7 @@ class InvoicesDocument extends BaseDocument
             foreach ($lineTags as $tag => $method) {
                 
                 // Make text node for method value
-                $node = $this->createTextNode($this->getValueFromCallback([$line, $method]));
+                $node = $this->createTextNode((string) $this->getValueFromCallback([$line, $method]));
 
                 if ($node->textContent === "") {
                     continue;

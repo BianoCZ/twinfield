@@ -233,7 +233,7 @@ class TransactionsDocument extends BaseDocument
             }
 
             if ($transactionLine->getDescription() !== null) {
-                $descriptionNode = $this->createTextNode($transactionLine->getDescription());
+                $descriptionNode = $this->createTextNode((string) $transactionLine->getDescription());
                 $descriptionElement = $this->createElement('description');
                 $descriptionElement->appendChild($descriptionNode);
                 $lineElement->appendChild($descriptionElement);

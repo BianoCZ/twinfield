@@ -77,7 +77,11 @@ abstract class BaseDocument extends \DOMDocument
             $value = Util::formatBoolean($value);
         }
 
-        return $value;
+        if ($value === null) {
+            return null;
+        }
+
+        return (string) $value;
     }
 
     /**
