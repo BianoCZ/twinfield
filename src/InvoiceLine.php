@@ -187,12 +187,15 @@ class InvoiceLine
         return $this;
     }
 
-    public function getPerformanceType(): ?PerformanceType
+    /**
+     * @return \PhpTwinfield\Enums\PerformanceType|null
+     */
+    public function getPerformanceType()
     {
         return $this->performanceType;
     }
 
-    public function setPerformanceType(?PerformanceType $performanceType): self
+    public function setPerformanceType($performanceType): self
     {
         $this->performanceType = $performanceType;
         return $this;
